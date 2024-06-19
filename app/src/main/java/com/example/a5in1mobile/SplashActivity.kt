@@ -11,15 +11,13 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // Mengatur timer untuk menunda tampilan splash screen
         Handler().postDelayed(Runnable {
-            // Aksi yang dilakukan setelah menampilkan splash screen
             val intent = Intent(
                 this@SplashActivity,
                 MainActivity::class.java
             )
             startActivity(intent)
-            finish() // Menutup activity splash screen agar tidak kembali lagi
-        }, 3000) // Waktu dalam milidetik (misalnya 3000 = 3 detik)
+            finish()
+        }, 3000)
     }
 }
