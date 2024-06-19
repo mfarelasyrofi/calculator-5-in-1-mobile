@@ -28,6 +28,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PajakActivity::class.java)
             startActivity(intent)
         }
+
+        val rlUang = findViewById<RelativeLayout>(R.id.rl_uang)
+        rlUang.setOnClickListener {
+            val intent = Intent(this, UangActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }

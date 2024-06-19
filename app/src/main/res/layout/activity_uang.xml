@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/pajak_act"
     android:background="@drawable/bg"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="150dp"
@@ -13,6 +14,7 @@
         android:src="@drawable/baseline_data_exploration_24"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"/>
+
     <TextView
         android:id="@+id/pajak_nama"
         android:text="Kalkulator Pajak"
@@ -24,28 +26,41 @@
         android:textColor="@color/purple_700"/>
 
     <EditText
+        android:id="@+id/amountEditText"
+        android:layout_width="match_parent"
         android:background="@color/lavender"
+        android:layout_height="wrap_content"
+        android:hint="Enter amount"
         android:textColor="@color/white"
-        android:id="@+id/editTextIncome"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="16dp" />
+
+    <Spinner
+        android:id="@+id/fromCurrencySpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Masukkan Penghasilan Anda"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
+
+    <Spinner
+        android:id="@+id/toCurrencySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
 
     <Button
-        android:id="@+id/buttonCalculate"
+        android:id="@+id/convertButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hitung Tax"
-        android:onClick="calculateTax"
-        android:layout_marginBottom="16dp"/>
+        android:text="Convert"
+        android:background="@color/lavender"
+        android:layout_marginBottom="16dp" />
 
     <TextView
-        android:id="@+id/textViewResult"
+        android:id="@+id/resultTextView"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/white"/>
+        android:text=""
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>
