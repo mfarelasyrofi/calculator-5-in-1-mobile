@@ -237,14 +237,15 @@
                 app:cardElevation="20dp">
 
                 <RelativeLayout
+                    android:id="@+id/rl_kalori"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/pharmName"
+                        android:id="@+id/tv_kalori"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/pharmImage"
+                        android:layout_below="@+id/iv_kalori"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:text="Kalkulator Kalori"
@@ -252,7 +253,7 @@
                         android:textSize="14sp" />
 
                     <ImageView
-                        android:id="@+id/pharmImage"
+                        android:id="@+id/iv_kalori"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_centerHorizontal="true"

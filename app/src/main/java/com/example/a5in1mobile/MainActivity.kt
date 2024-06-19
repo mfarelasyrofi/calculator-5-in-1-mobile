@@ -46,6 +46,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, BmiActivity::class.java)
             startActivity(intent)
         }
+
+        val rlKalori = findViewById<RelativeLayout>(R.id.rl_kalori)
+        rlKalori.setOnClickListener {
+            val intent = Intent(this, KaloriActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }
