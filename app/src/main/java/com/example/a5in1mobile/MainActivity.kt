@@ -40,6 +40,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DiskonActivity::class.java)
             startActivity(intent)
         }
+
+        val rlBmi = findViewById<RelativeLayout>(R.id.rl_bmi)
+        rlBmi.setOnClickListener {
+            val intent = Intent(this, BmiActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }

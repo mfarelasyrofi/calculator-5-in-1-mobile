@@ -15,6 +15,9 @@
         android:theme="@style/Theme._5in1mobile"
         tools:targetApi="31">
         <activity
+            android:name=".BmiActivity"
+            android:exported="false" />
+        <activity
             android:name=".DiskonActivity"
             android:exported="false" />
         <activity
