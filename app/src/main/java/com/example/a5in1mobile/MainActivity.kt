@@ -34,6 +34,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, UangActivity::class.java)
             startActivity(intent)
         }
+
+        val rlDiskon = findViewById<RelativeLayout>(R.id.rl_diskon)
+        rlDiskon.setOnClickListener {
+            val intent = Intent(this, UangActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }
