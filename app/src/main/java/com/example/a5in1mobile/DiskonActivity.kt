@@ -34,7 +34,7 @@ class DiskonActivity : AppCompatActivity() {
         if (originalPrice != null && discountPercentage != null) {
             val discountAmount = originalPrice * discountPercentage / 100
             val finalPrice = originalPrice - discountAmount
-            resultTextView.text = "Final Price: $$finalPrice"
+            resultTextView.text = "Final Price: $finalPrice"
         } else {
             resultTextView.text = "Please enter valid values"
         }

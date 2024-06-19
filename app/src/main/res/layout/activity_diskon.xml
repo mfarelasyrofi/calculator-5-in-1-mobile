@@ -13,14 +13,14 @@
         android:layout_height="150dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/baseline_data_exploration_24" />
+        android:src="@drawable/baseline_discount_24" />
 
     <TextView
         android:id="@+id/pajak_nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:text="Kalkulator Pajak"
+        android:text="Kalkulator Diskon"
         android:textAlignment="center"
         android:textColor="@color/purple_700"
         android:textSize="18sp" />
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@color/lavender"
-        android:hint="Original Price"
+        android:hint="Harga Normal"
         android:inputType="numberDecimal"
         android:textColor="@color/white" />
 
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@color/lavender"
-        android:hint="Discount Percentage"
+        android:hint="Persentase Diskon"
         android:inputType="numberDecimal"
         android:textColor="@color/white" />
 
@@ -59,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text=""
+        android:textColor="@color/white"
         android:textSize="18sp" />
 
 </LinearLayout>
