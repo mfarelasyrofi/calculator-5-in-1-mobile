@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="@color/lavender"
-            android:hint="Enter weight (kg)"
+            android:hint="Berat Badan (kg)"
             android:inputType="numberDecimal"
             android:textColor="@color/white" />
 
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="@color/lavender"
-            android:hint="Enter height (cm)"
+            android:hint="Tinggi Badan (cm)"
             android:inputType="numberDecimal"
             android:textColor="@color/white" />
 
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="@color/lavender"
-            android:hint="Enter age (years)"
+            android:hint="Umur (tahun)"
             android:inputType="number"
             android:textColor="@color/white" />
 
@@ -65,7 +65,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="@color/lavender"
             android:orientation="horizontal"
             android:textColor="@color/white">
 
@@ -73,16 +72,14 @@
                 android:id="@+id/maleRadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/lavender"
-                android:text="Male"
+                android:text="Laki-Laki"
                 android:textColor="@color/white" />
 
             <RadioButton
                 android:id="@+id/femaleRadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/lavender"
-                android:text="Female"
+                android:text="Perempuan"
                 android:textColor="@color/white" />
         </RadioGroup>
 

@@ -27,52 +27,52 @@ class KaloriActivity : AppCompatActivity() {
         resultTextView = findViewById(R.id.resultTextView)
 
         // Set up the spinner
-        val activityLevels = arrayOf(
-            "Sedentary (little or no exercise)",
-            "Lightly active (light exercise/sports 1-3 days/week)",
-            "Moderately active (moderate exercise/sports 3-5 days/week)",
-            "Very active (hard exercise/sports 6-7 days a week)",
-            "Super active (very hard exercise/sports & physical job)"
+        val tingkatAktivitas = arrayOf(
+            "Sedentari (sedikit atau tanpa olahraga)",
+            "Aktif Ringan (olahraga ringan 1-3 hari/minggu)",
+            "Aktif Sedang (olahraga sedang 3-5 hari/minggu)",
+            "Sangat Aktif (olahraga berat 6-7 hari/minggu)",
+            "Super Aktif (olahraga berat & pekerjaan fisik)"
         )
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, activityLevels)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, tingkatAktivitas)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         activityLevelSpinner.adapter = adapter
 
         calculateButton.setOnClickListener {
-            calculateCalories()
+            hitungKalori()
         }
     }
 
-    private fun calculateCalories() {
-        val weight = weightEditText.text.toString().toDoubleOrNull()
-        val height = heightEditText.text.toString().toDoubleOrNull()
-        val age = ageEditText.text.toString().toIntOrNull()
-        val genderId = genderRadioGroup.checkedRadioButtonId
-        val activityLevel = activityLevelSpinner.selectedItem.toString()
+    private fun hitungKalori() {
+        val berat = weightEditText.text.toString().toDoubleOrNull()
+        val tinggi = heightEditText.text.toString().toDoubleOrNull()
+        val usia = ageEditText.text.toString().toIntOrNull()
+        val jenisKelaminId = genderRadioGroup.checkedRadioButtonId
+        val tingkatAktivitas = activityLevelSpinner.selectedItem.toString()
 
-        if (weight != null && height != null && age != null && genderId != -1) {
-            val isMale = genderId == R.id.maleRadioButton
+        if (berat != null && tinggi != null && usia != null && jenisKelaminId != -1) {
+            val isPria = jenisKelaminId == R.id.maleRadioButton
 
-            // Calculate BMR (Basal Metabolic Rate)
-            val bmr = if (isMale) {
-                88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age)
+            // Hitung BMR (Basal Metabolic Rate)
+            val bmr = if (isPria) {
+                88.362 + (13.397 * berat) + (4.799 * tinggi) - (5.677 * usia)
             } else {
-                447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age)
+                447.593 + (9.247 * berat) + (3.098 * tinggi) - (4.330 * usia)
             }
 
-            // Calculate daily calorie needs based on activity level
-            val calories = when (activityLevel) {
-                "Sedentary (little or no exercise)" -> bmr * 1.2
-                "Lightly active (light exercise/sports 1-3 days/week)" -> bmr * 1.375
-                "Moderately active (moderate exercise/sports 3-5 days/week)" -> bmr * 1.55
-                "Very active (hard exercise/sports 6-7 days a week)" -> bmr * 1.725
-                "Super active (very hard exercise/sports & physical job)" -> bmr * 1.9
+            // Hitung kebutuhan kalori harian berdasarkan tingkat aktivitas
+            val kalori = when (tingkatAktivitas) {
+                "Sedentari (sedikit atau tanpa olahraga)" -> bmr * 1.2
+                "Aktif Ringan (olahraga ringan 1-3 hari/minggu)" -> bmr * 1.375
+                "Aktif Sedang (olahraga sedang 3-5 hari/minggu)" -> bmr * 1.55
+                "Sangat Aktif (olahraga berat 6-7 hari/minggu)" -> bmr * 1.725
+                "Super Aktif (olahraga berat & pekerjaan fisik)" -> bmr * 1.9
                 else -> bmr * 1.2
             }
 
-            resultTextView.text = "Your daily calorie needs: %.2f calories".format(calories)
+            resultTextView.text = "Kebutuhan kalori harian Anda: %.2f kalori".format(kalori)
         } else {
-            resultTextView.text = "Please enter valid values"
+            resultTextView.text = "Harap masukkan nilai yang valid"
         }
     }
 }
